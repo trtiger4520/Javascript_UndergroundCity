@@ -479,7 +479,7 @@ html, body {
     content: '';
     display: block;
     width: 2px;
-    height: 30px;
+    height: calc(var(--MinuteHand-height) / 4);
     position: absolute;
     top: 5px;
     left: calc(50% - 1px);
@@ -590,4 +590,23 @@ html, body {
 .second-hand .sec-hr:nth-child(5) {
     top: calc(var(--SecondHand-height)  * 0.675);
     height: calc(var(--SecondHand-height)  * 0.325);
+}
+
+
+.backtoLsit {
+    position: fixed;
+    bottom: 35px;
+    border: 2px solid rgba(0, 142, 128, 1);
+    background-color:rgba(0, 142, 128, 0.87);
+}
+
+.backtoLsit .content {
+    display: block;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.backtoLsit .content::before {
+    content: '⇦'
 }

@@ -120,7 +120,7 @@ body {
     box-shadow: 0 3px 10px #D8D8D8;
 }
 
-.content {
+.grid .content {
     display: flex; 
     flex-flow: column wrap;
     align-items: stretch;
@@ -145,4 +145,32 @@ body {
     margin-bottom: 8px;
     margin-right: 15px;
     line-height: 33px;
+}
+
+.footer {
+    text-align: right;
+    background-color: #2EB738;
+    color: #F0F0F0;
+    font-size: 16px;
+}
+.footer .container {
+    padding: 8px 85px;
+}
+
+.backtoLsit {
+    position: fixed;
+    bottom: 35px;
+    border: 2px solid rgba(0, 142, 128, 1);
+    background-color:rgba(0, 142, 128, 0.87);
+}
+
+.backtoLsit .content {
+    display: block;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.backtoLsit .content::before {
+    content: '⇦'
 }
