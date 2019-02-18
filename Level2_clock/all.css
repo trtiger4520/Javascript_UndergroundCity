@@ -1,0 +1,593 @@
+* {
+    box-sizing: border-box;
+
+    --backgroundMainColor: #293B29;
+    --backgroundDeputyColor: #3d5a45;
+    --primaryColor: #e26e06;
+    --hourColor1: #ff7600;
+    --hourColor2: #ffffff;
+    --minuteColor1: #ffffff;
+    --minuteColor2: #293b29;
+    --secondColor1: #b1ff00;
+    --pointColor: #ffffff;
+    --textColor: #ffffff;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/HelveticaNeue-Roman.otf");
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: var(--backgroundMainColor);
+    font-family:  'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-main {
+    width: 350px;
+    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
+    position: relative;
+}
+
+.clock-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50px;
+    background-color: var(--backgroundDeputyColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-circle {
+    width: 316px;
+    height: 316px;
+    border-radius: 50%;
+    border: 3px solid #21300d;
+    background-color: var(--backgroundMainColor);
+    color: var(--textColor);
+    position: relative;
+
+    --defaultDeg: 90deg;
+}
+
+.clock-circle .scale {
+    position: absolute;
+    top: 50%;
+    left: calc(1px + 20px);
+    transform: translateY(-50%);
+    transform-origin: 134px;
+}
+
+.clock-circle .scale::after {
+    content: '';
+    display: block;
+    background-color: var(--primaryColor);
+    width: 25px;
+    height: 1px;
+}
+
+.clock-circle .scale .num {
+    position: absolute;
+    font-size: 10px
+
+}
+
+.clock-circle .scale:nth-child(1) {
+    transform: translateY(-50%) rotate(calc(30deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(2) {
+    transform: translateY(-50%) rotate(calc(60deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(3) {
+    transform: translateY(-50%) rotate(calc(90deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(4) {
+    transform: translateY(-50%) rotate(calc(120deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(5) {
+    transform: translateY(-50%) rotate(calc(150deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(6) {
+    transform: translateY(-50%) rotate(calc(180deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(7) {
+    transform: translateY(-50%) rotate(calc(210deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(8) {
+    transform: translateY(-50%) rotate(calc(240deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(9) {
+    transform: translateY(-50%) rotate(calc(270deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(10) {
+    transform: translateY(-50%) rotate(calc(300deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(11) {
+    transform: translateY(-50%) rotate(calc(330deg + var(--defaultDeg)));
+}
+.clock-circle .scale:nth-child(12) {
+    transform: translateY(-50%) rotate(var(--defaultDeg));
+}
+
+
+.clock-circle .scale:nth-child(1) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-120deg);
+}
+.clock-circle .scale:nth-child(2) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-150deg);
+}
+.clock-circle .scale:nth-child(3) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-180deg);
+}
+.clock-circle .scale:nth-child(4) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-210deg);
+}
+.clock-circle .scale:nth-child(5) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-240deg);
+}
+.clock-circle .scale:nth-child(6) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-270deg);
+}
+.clock-circle .scale:nth-child(7) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-300deg);
+}
+.clock-circle .scale:nth-child(8) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-330deg);
+}
+.clock-circle .scale:nth-child(9) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(0);
+}
+.clock-circle .scale:nth-child(10) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-30deg);
+}
+.clock-circle .scale:nth-child(11) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-60deg);
+}
+.clock-circle .scale:nth-child(12) .num:nth-child(1) {
+    transform: translate( calc(-14px), -40%) rotate(-90deg);
+}
+
+.clock-circle .scale:nth-child(1) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-120deg);
+}
+.clock-circle .scale:nth-child(2) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-150deg);
+}
+.clock-circle .scale:nth-child(3) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-180deg);
+}
+.clock-circle .scale:nth-child(4) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-210deg);
+}
+.clock-circle .scale:nth-child(5) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-240deg);
+}
+.clock-circle .scale:nth-child(6) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-270deg);
+}
+.clock-circle .scale:nth-child(7) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-300deg);
+}
+.clock-circle .scale:nth-child(8) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(-330deg);
+}
+.clock-circle .scale:nth-child(9) .num:nth-child(2) {
+    transform: translate( calc(33px), -40%) rotate(0);
+}
+.clock-circle .scale:nth-child(10) .num:nth-child(2) {
+    transform: translate( calc(33px + -4px), -40%) rotate(-30deg);
+}
+.clock-circle .scale:nth-child(11) .num:nth-child(2) {
+    transform: translate( calc(33px + -4px), -40%) rotate(-60deg);
+}
+.clock-circle .scale:nth-child(12) .num:nth-child(2) {
+    transform: translate( calc(33px + -4px), -40%) rotate(-90deg);
+}
+
+.clock-circle .point {
+    position: absolute;
+    top: 50%;
+    left: calc(1px + 20px + 12.5px - 1px);
+    transform: translateY(-50%);
+    transform-origin: 122.5px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--pointColor);
+
+    --onesDeg: 5deg;
+}
+
+.clock-circle .point:nth-child(15),
+.clock-circle .point:nth-child(20),
+.clock-circle .point:nth-child(25),
+.clock-circle .point:nth-child(30),
+.clock-circle .point:nth-child(35),
+.clock-circle .point:nth-child(40),
+.clock-circle .point:nth-child(45),
+.clock-circle .point:nth-child(50),
+.clock-circle .point:nth-child(55),
+.clock-circle .point:nth-child(60),
+.clock-circle .point:nth-child(65),
+.clock-circle .point:nth-child(70) {
+    background-color: transparent;
+}
+.clock-circle .point:nth-child(15)::after,
+.clock-circle .point:nth-child(20)::after,
+.clock-circle .point:nth-child(25)::after,
+.clock-circle .point:nth-child(30)::after,
+.clock-circle .point:nth-child(35)::after,
+.clock-circle .point:nth-child(40)::after,
+.clock-circle .point:nth-child(45)::after,
+.clock-circle .point:nth-child(50)::after,
+.clock-circle .point:nth-child(55)::after,
+.clock-circle .point:nth-child(60)::after,
+.clock-circle .point:nth-child(65)::after,
+.clock-circle .point:nth-child(70)::after {
+    position: absolute;
+    content: '✦';
+    display: block;
+    top: 50%;
+    left: 50%;
+    font-size: 5pt;
+    color:  var(--primaryColor);
+    transform: translate(-50%, -50%);
+}
+
+.clock-circle .point:nth-child(13) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 1) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(14) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 2) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(15) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 3) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(16) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 4) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(17) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 5) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(18) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 7) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(19) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 8) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(20) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 9) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(21) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 10) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(22) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 11) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(23) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 13) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(24) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 14) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(25) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 15) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(26) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 16) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(27) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 17) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(28) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 19) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(29) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 20) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(30) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 21) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(31) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 22) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(32) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 23) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(33) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 25) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(34) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 26) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(35) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 27) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(36) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 28) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(37) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 29) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(38) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 31) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(39) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 32) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(40) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 33) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(41) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 34) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(42) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 35) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(43) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 37) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(44) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 38) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(45) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 39) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(46) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 40) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(47) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 41) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(48) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 43) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(49) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 44) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(50) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 45) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(51) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 46) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(52) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 47) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(53) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 49) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(54) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 50) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(55) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 51) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(56) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 52) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(57) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 53) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(58) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 55) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(59) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 56) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(60) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 57) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(61) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 58) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(62) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 59) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(63) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 61) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(64) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 62) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(65) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 63) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(66) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 64) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(67) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 65) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(68) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 67) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(69) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 68) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(70) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 69) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(71) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 70) + var(--defaultDeg)));
+}
+.clock-circle .point:nth-child(72) {
+    transform: translateY(-50%) rotate(calc((var(--onesDeg) * 71) + var(--defaultDeg)));
+}
+
+.mid-point {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--pointColor);
+    z-index: 50;
+}
+
+/* Hand Transitions */
+.hour-hand.transitions {
+    /* transition: transform .3s ease-in-out;  */
+}
+.minute-hand.transitions {
+    /* transition: transform .3s ease-in-out; */
+}
+.second-hand.transitions {
+    transition: transform .3s cubic-bezier(0.79, 1.85, 0.04, 0.83);
+}
+
+/* Hour Hand 時針*/
+
+.hour-hand {
+    --MinuteHand-width: 8px;
+    --MinuteHand-height: 72px;
+    width: var(--MinuteHand-width);
+    height: var(--MinuteHand-height);
+    background-color: var(--minuteColor1);
+    position: absolute;
+    bottom: calc(50% - 5px);
+    left: calc(50% - (var(--MinuteHand-width) / 2));
+    transform: rotate(0deg);
+    transform-origin: calc(var(--MinuteHand-width) / 2) calc(var(--MinuteHand-height) - 4.5px);
+    z-index: 30;
+}
+
+.hour-hand::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 1px);
+    background-color: var(--minuteColor2);
+}
+
+/* Minute Hand */
+
+.minute-hand {
+    --HourHand-width: 8px;
+    --HourHand-height: 96px;
+    width: var(--HourHand-width);
+    height: var(--HourHand-height);
+    border-radius: 5px;
+    background-color: var(--hourColor1);
+    position: absolute;
+    bottom: calc(50% - 5px);
+    left: calc(50% - (var(--HourHand-width) / 2));
+    transform: rotate(0deg);
+    transform-origin: calc(var(--HourHand-width) / 2) calc(var(--HourHand-height) - 4.5px);
+    z-index: 40;
+}
+
+.minute-hand::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: calc(50% - 0.5px);
+    background-color: var(--hourColor2);
+}
+
+/* Second Hand */
+.second-hand {
+    --SecondHand-width: 12px;
+    --SecondHand-height: 126px;
+    width: var(--SecondHand-width);
+    height: var(--SecondHand-height);
+    /* background-color: var(--secondColor1); */
+    position: absolute;
+    bottom: calc(50% - 5px);
+    left: calc(50% - (var(--SecondHand-width) / 2));
+    transform: rotate(0deg);
+    transform-origin: calc(var(--SecondHand-width) / 2) calc(var(--SecondHand-height) - 4.5px);
+    z-index: 20;
+}
+
+.second-hand::before,
+.second-hand::after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-55%, 50%);
+    background-color: var(--secondColor1);
+}
+
+.second-hand::after {
+    width: 6px;
+    height: 6px;
+    background-color: var(--secondColor1);
+}
+
+.second-hand::before {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    box-shadow: 0 0 0 1px var(--secondColor1);
+}
+
+.second-hand .sec-hr {
+    position: absolute;
+    left: calc(50% - 0.5px);
+    background-color: var(--secondColor1);
+    width: 1px;
+}
+
+.second-hand .sec-hr:nth-child(1) {
+    top: 4px;
+    height: calc(var(--SecondHand-height)  * 0.35);
+}
+
+.second-hand .sec-hr:nth-child(2) {
+    top: calc(var(--SecondHand-height)  * 0.349 + 4px);
+    height: calc(var(--SecondHand-height)  * 0.1);
+    transform: rotate(-40deg);
+    transform-origin: top;
+}
+
+.second-hand .sec-hr:nth-child(3) {
+    top: calc(var(--SecondHand-height)  * 0.395 + 4px);
+    height: calc(var(--SecondHand-height)  * 0.2);
+    transform: rotate(40deg);
+    transform-origin: center;
+}
+
+.second-hand .sec-hr:nth-child(4) {
+    top: calc(var(--SecondHand-height)  * 0.545 + 4px);
+    height: calc(var(--SecondHand-height)  * 0.1);
+    transform: rotate(-40deg);
+    transform-origin: bottom;
+}
+
+.second-hand .sec-hr:nth-child(5) {
+    top: calc(var(--SecondHand-height)  * 0.675);
+    height: calc(var(--SecondHand-height)  * 0.325);
+}
