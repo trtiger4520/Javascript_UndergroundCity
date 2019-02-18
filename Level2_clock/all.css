@@ -449,12 +449,12 @@ html, body {
 }
 
 /* Hand Transitions */
-.hour-hand.transitions {
-    /* transition: transform .3s ease-in-out;  */
+/* .hour-hand.transitions {
+    transition: transform .3s ease-in-out; 
 }
 .minute-hand.transitions {
-    /* transition: transform .3s ease-in-out; */
-}
+    transition: transform .3s ease-in-out;
+} */
 .second-hand.transitions {
     transition: transform .3s cubic-bezier(0.79, 1.85, 0.04, 0.83);
 }

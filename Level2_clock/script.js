@@ -80,8 +80,8 @@
         setTransition: function() {
             const {hourHand, minuteHand, secondHand} = this.data.hand;
             let className = 'transitions';
-            hourHand.classList.add(className);
-            minuteHand.classList.add(className);
+            // hourHand.classList.add(className);
+            // minuteHand.classList.add(className);
             secondHand.classList.add(className);
         },
 
