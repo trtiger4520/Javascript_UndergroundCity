@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-
+:root {
     --backgroundMainColor: #293B29;
     --backgroundDeputyColor: #3d5a45;
     --primaryColor: #e26e06;
@@ -11,6 +9,10 @@
     --secondColor1: #b1ff00;
     --pointColor: #ffffff;
     --textColor: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 @font-face {
