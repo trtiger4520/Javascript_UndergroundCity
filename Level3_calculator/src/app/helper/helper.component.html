@@ -1,0 +1,41 @@
+<div id="Helper" class="helper" [className]="open? 'helper open': 'helper'">
+  <button class="toggleHelper" (click)="toggleOpen()">
+    ?
+  </button>
+  <div class="content">
+    Ex:
+    <ul>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">btn</span> ➞ KeyBoard  
+        </div>
+      </li>
+      <hr>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">0</span> ➞ 0~9  
+        </div>
+      </li>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">+</span> ➞ + - * /
+        </div>
+      </li>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">=</span> ➞ Enter  
+        </div>
+      </li>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">⌫</span> ➞ Delete  
+        </div>
+      </li>
+      <li>
+        <div class="helperkey">
+          <span class="keyicon">C</span> ➞ Backspace  
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

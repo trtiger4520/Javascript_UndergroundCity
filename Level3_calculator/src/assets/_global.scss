@@ -1,0 +1,25 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #E8E8E8;
+    font-family: $font-default;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.test {
+    @include GradientColor($blue, $purple, left);
+    display: block;
+}

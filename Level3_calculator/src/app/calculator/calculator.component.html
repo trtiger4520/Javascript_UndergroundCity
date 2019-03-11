@@ -1,0 +1,13 @@
+<div id="Calculator" class="calculator">
+    <div class="calc-display">
+        <div class="clac">{{ Calc }}</div>
+        <div class="total">{{ Total }}</div>
+    </div>
+    <div class="keyboard">
+        <div *ngFor="let btn of keylist" 
+            (click)="enterKey(btn.key)" 
+            [class]="btn.classlist.join(' ')">
+            {{ btn.key }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+
+
+.backtoList {
+    position: fixed;
+    bottom: 35px;
+    left: 0;
+    border: 2px solid rgba(0, 142, 128, 1);
+    background-color:rgba(0, 142, 128, 0.87);
+}
+
+.backtoList .content {
+    display: block;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.backtoList .content::before {
+    content: '⇦'
+}
