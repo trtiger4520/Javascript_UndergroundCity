@@ -1,0 +1,12 @@
+@mixin GradientColor($from, $to, $direction) {
+    $_left: (default: to right, moz: left, webkit: left, ie: 1);
+    $_top: (default: to right, moz: left, webkit: left, ie: 0);
+    $Selector: (left: $_left, top: $_top);
+
+    $Orientation: map-get($Selector, $direction);
+    background: $from;
+    background: -moz-linear-gradient(map-get($Orientation, moz), $from 0%, $to 100%);
+    background: -webkit-linear-gradient(map-get($Orientation, webkit), $from 0%,$to 100%);
+    background: linear-gradient(map-get($Orientation, default), $from 0%,$to 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=#{map-get($Orientation, ie)} );
+}

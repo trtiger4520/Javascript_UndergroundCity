@@ -1,0 +1,23 @@
+// color list
+$white: #FFFFFF;
+$gray: #E8E8E8;
+$blue: #00C4FF;
+$navy-blue: #062145;
+$dark-blue: #041936;
+$purple: #6C00FF;
+
+
+$main-color: $navy-blue;
+$text-color: $white;
+$text-light-color: $blue;
+$button-color: $dark-blue;
+$calc-display-color: $dark-blue;
+$body-background-color: $gray;
+
+$helper-background-color: lighten($navy-blue, 10%);
+$helper-border-color: $dark-blue;
+
+//font
+
+$font-default: 'Roboto', sans-serif;
+$key-font-size: 24px;
