@@ -123,7 +123,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"backtoList\">\n    <a href=\"../index.html\" class=\"content\">\n        回到列表\n\n    </a>\n</div>"
+module.exports = "<div class=\"backtoList\">\n    <a href=\"../../../index.html\" class=\"content\">\n        回到列表\n\n    </a>\n</div>"
 
 /***/ }),
 
