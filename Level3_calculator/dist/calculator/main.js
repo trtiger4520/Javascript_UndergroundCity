@@ -258,7 +258,7 @@ var CalculatorComponent = /** @class */ (function () {
                     case _key__WEBPACK_IMPORTED_MODULE_2__["FUNC"][1]: {
                         // 去掉最後輸入的內容
                         if (enterKeyLength > 0) {
-                            this.enterKeyList.splice(enterKeyLength - 2, 1);
+                            this.enterKeyList.splice(enterKeyLength - 1, 1);
                         }
                         break;
                     }
@@ -273,7 +273,16 @@ var CalculatorComponent = /** @class */ (function () {
             // 小數點類型
             case _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][3]: {
                 // 確認清單內沒有小數點
-                var checkpoint = this.enterKeyList.some(function (k) { return k.type === _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][3]; });
+                var checkpoint = this.enterKeyList.reduce(function (search, k) {
+                    // 如果輸入運算子
+                    if (k.type === _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][3]) {
+                        search = true;
+                    }
+                    else if (k.type === _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][1]) {
+                        search = false;
+                    }
+                    return search;
+                }, false);
                 // 如果放在第一個項目的話加上0
                 if (enterKeyLength <= 0) {
                     this.enterKeyList.push(new _key__WEBPACK_IMPORTED_MODULE_2__["Key"]('0', _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][0], []));
@@ -295,7 +304,6 @@ var CalculatorComponent = /** @class */ (function () {
     };
     // 將KeyList轉成算式清單(組合數字)
     CalculatorComponent.prototype.parseClacList = function (KeyList) {
-        // console.log(KeyList[0]);
         var lastType;
         var numtype = _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][0];
         var pointtype = _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][3];
@@ -312,7 +320,6 @@ var CalculatorComponent = /** @class */ (function () {
             }
             lastType = k.type;
         }
-        console.log(newList);
         return newList;
     };
     // 列出機算項目
@@ -373,7 +380,7 @@ var CalculatorComponent = /** @class */ (function () {
             clactype: ''
         }).total;
         // console.log(calcList, Total);
-        return Total;
+        return parseFloat(Number(Total).toFixed(10));
     };
     CalculatorComponent.prototype.clearClacAndTotal = function () {
         this.enterKeyList = [];

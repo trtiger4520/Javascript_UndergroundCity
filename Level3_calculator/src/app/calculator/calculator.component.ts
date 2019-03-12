@@ -88,7 +88,7 @@ export class CalculatorComponent implements OnInit {
 
             // 去掉最後輸入的內容
             if (enterKeyLength > 0) {
-              this.enterKeyList.splice(enterKeyLength - 2, 1);
+              this.enterKeyList.splice(enterKeyLength - 1, 1);
             }
 
             break;
@@ -108,7 +108,16 @@ export class CalculatorComponent implements OnInit {
       // 小數點類型
       case KEYTYPE[3]: {
         // 確認清單內沒有小數點
-        const checkpoint = this.enterKeyList.some(k => k.type === KEYTYPE[3]);
+        const checkpoint = this.enterKeyList.reduce((search, k) => {
+
+          // 如果輸入運算子
+          if (k.type === KEYTYPE[3]) {
+            search = true;
+          } else if (k.type === KEYTYPE[1]) {
+            search = false;
+          }
+          return search;
+        }, false);
 
         // 如果放在第一個項目的話加上0
         if (enterKeyLength <= 0) {
@@ -136,7 +145,6 @@ export class CalculatorComponent implements OnInit {
 
   // 將KeyList轉成算式清單(組合數字)
   parseClacList(KeyList: Array<Key>): Array<Key> {
-    // console.log(KeyList[0]);
     let lastType: string;
     const numtype = KEYTYPE[0];
     const pointtype = KEYTYPE[3];
@@ -151,7 +159,6 @@ export class CalculatorComponent implements OnInit {
       }
       lastType = k.type;
     }
-    console.log(newList);
     return newList;
   }
 
@@ -226,7 +233,7 @@ export class CalculatorComponent implements OnInit {
       clactype: ''
     }).total;
     // console.log(calcList, Total);
-    return Total;
+    return parseFloat(Number(Total).toFixed(10));
   }
 
   clearClacAndTotal() {
