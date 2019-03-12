@@ -139,17 +139,19 @@ export class CalculatorComponent implements OnInit {
     // console.log(KeyList[0]);
     let lastType: string;
     const numtype = KEYTYPE[0];
+    const pointtype = KEYTYPE[3];
     const newList: Array<Key> = [];
     for (const k of KeyList) {
       const length = newList.length;
-      const judge = length !== 0 && lastType === numtype && k.type === numtype;
-      if (judge) {
+      const judge = (lastType === numtype || lastType === pointtype) && (k.type === numtype || k.type === pointtype);
+      if (length !== 0 && judge) {
         newList[length - 1].key = newList[length - 1].key + k.key;
       } else {
         newList.push(k);
       }
       lastType = k.type;
     }
+    console.log(newList);
     return newList;
   }
 

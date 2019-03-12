@@ -298,12 +298,13 @@ var CalculatorComponent = /** @class */ (function () {
         // console.log(KeyList[0]);
         var lastType;
         var numtype = _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][0];
+        var pointtype = _key__WEBPACK_IMPORTED_MODULE_2__["KEYTYPE"][3];
         var newList = [];
         for (var _i = 0, KeyList_1 = KeyList; _i < KeyList_1.length; _i++) {
             var k = KeyList_1[_i];
             var length_1 = newList.length;
-            var judge = length_1 !== 0 && lastType === numtype && k.type === numtype;
-            if (judge) {
+            var judge = (lastType === numtype || lastType === pointtype) && (k.type === numtype || k.type === pointtype);
+            if (length_1 !== 0 && judge) {
                 newList[length_1 - 1].key = newList[length_1 - 1].key + k.key;
             }
             else {
@@ -311,6 +312,7 @@ var CalculatorComponent = /** @class */ (function () {
             }
             lastType = k.type;
         }
+        console.log(newList);
         return newList;
     };
     // 列出機算項目
