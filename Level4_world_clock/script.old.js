@@ -1,6 +1,4 @@
 import zone from './data/zone.js';
-import country from './data/country.js';
-import timezone from './data/timezone.js';
 
 (function(){
     // init

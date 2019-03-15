@@ -3,6 +3,7 @@
     --main-background: #E5E5E5;
     --text-color: var(--main-color);
     --text-night-color: #FFFFFF;
+    --area-background: #FFFFFF;
 }
 
 * {
@@ -36,6 +37,8 @@ body {
 .world_clock {
     margin: auto;
     width: 540px;
+    max-width: 100%;
+    padding: 50px 0;
 }
 
 header {
@@ -51,12 +54,12 @@ header h1 {
     text-transform: uppercase;
 }
 
-
 .area {
     border-color: var(--main-color);
     border-style: solid;
     border-width: 3px;
     border-bottom-width: 0px;
+    background-color: var(--area-background);
 
     padding: 13.5px 37px;
     display: flex;
