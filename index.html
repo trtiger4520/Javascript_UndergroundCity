@@ -6,108 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>javascript 新手地下城</title>
-    <style>
-        :root {
-            --main-color: #00a99d;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--main-color);
-        }
-
-        ul,
-        li {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .container {
-            height: 100%;
-            width: 100%;
-            background-image: url(https://firebasestorage.googleapis.com/v0/b/hexschool-api.appspot.com/o/web%2Fevents%2F2019-js-starter%2Fwallpaper-1920x1080.png?alt=media&fbclid=IwAR2GbJFleEEH3I3yaczOMSPc8cSD0U10REN1Oiivs8KqkUfmjH4IAJBpn1w&token=0da861ce-3743-4f3e-bb44-70ba28dcfb00);
-            background-position: center center;
-            background-size: cover;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .content {
-            position: relative;
-            width: 400px;
-            padding: 50px;
-            background-color: rgba(244, 255, 244, .87);
-            border-radius: 3px 3px 0 0;
-        }
-
-        .content footer {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            padding: 5px;
-            text-align: center;
-            color: rgb(255, 255, 255);
-            background-color: rgba(0, 142, 128, .87);
-            border-radius: 0 0 3px 3px;
-        }
-
-        ul.Level li {
-            position: relative;
-            border: 2px solid rgb(112, 197, 186);
-            margin-top: -2px;
-            z-index: 0;
-        }
-
-        ul.Level li:first-child {
-            margin-top: 0;
-        }
-
-        ul.Level li:hover {
-            border-color: rgb(3, 131, 114);
-            z-index: 10;
-        }
-
-        ul.Level li a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: black;
-            text-align: center;
-        }
-
-        ul.Level li a:hover {
-            background-color: #FFFFFF;
-            color: black;
-        }
-
-        ul.Level li a::before {
-            content: '';
-            display: block;
-            height: 0;
-            clear: both;
-        }
-
-        ul.Level li a span {
-            float: left;
-        }
-
-        ul.Level li a span::after {
-            content: ' │';
-            color: rgba(150, 150, 150, .6);
-        }
-    </style>
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -130,6 +29,12 @@
                     <a href="./Level3_calculator/dist/calculator/index.html">
                         <span>F3</span>
                         計算機
+                    </a>
+                </li>
+                <li>
+                    <a href="./Level4_world_clock/index.html">
+                        <span>F4</span>
+                        時區
                     </a>
                 </li>
             </ul>
